@@ -6,30 +6,17 @@
 <title>Equipo Creativo — Agencia de Marketing</title>
 <meta name="description" content="Agencia de marketing digital y redes sociales en Mérida. Estrategia, branding y contenido que conecta.">
 
-<!-- ============================================================
-  GUÍA RÁPIDA DE EDICIÓN
-  ============================================================
-  1. Textos: busca cada seccion marcada con el texto EDITA AQUI
-  2. Proyectos del portafolio: busca ".work-card", ahi estan los 6
-     proyectos reales con sus imagenes en la carpeta /img
-  3. Colores: cambia los valores en :root (arriba del CSS)
-  4. WhatsApp / redes: busca "Contacto" cerca del final del archivo
-  5. Imagenes: estan en la carpeta /img junto a este archivo.
-     Si subes el sitio, asegurate de subir tambien esa carpeta.
-============================================================= -->
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700;800&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-  /* ============ TOKENS DE DISEÑO (tu branding real) ============ */
   :root{
-    --azul:#2946BF;       /* azul eléctrico de tu logo */
-    --azul-osc:#16216B;   /* azul más oscuro para fondos/contraste */
-    --naranja:#FC5F22;    /* naranja de acento de tu portafolio */
-    --negro:#FFFFFF;      /* antes negro, ahora blanco por solicitud */
-    --crema:#F4F2EC;      /* fondo claro cálido, no blanco puro */
+    --azul:#2946BF;
+    --azul-osc:#16216B;
+    --naranja:#FC5F22;
+    --negro:#FFFFFF;
+    --crema:#F4F2EC;
     --blanco:#FFFFFF;
 
     --display:'League Spartan', sans-serif;
@@ -59,7 +46,6 @@
 
   h1,h2,h3,.display{font-family:var(--display); font-weight:700;}
 
-  /* ============ HEADER ============ */
   header{
     position:sticky; top:0; z-index:100;
     background:var(--crema);
@@ -92,7 +78,6 @@
     .nav-links{display:none;}
   }
 
-  /* ============ HERO ============ */
   .hero{position:relative; padding:80px 0 56px; overflow:hidden; background:var(--negro); color:var(--crema);}
   .hero-grid{display:grid; grid-template-columns:1.1fr 0.9fr; gap:50px; align-items:center;}
   @media (max-width:900px){.hero-grid{grid-template-columns:1fr; gap:40px;}}
@@ -159,7 +144,6 @@
   .hc-2{bottom:12%; right:-6%; transform:rotate(6deg);}
   .hc-3{bottom:0%; left:10%; transform:rotate(-3deg); background:var(--negro); color:var(--crema); box-shadow:6px 6px 0 var(--naranja);}
 
-  /* ============ MARQUEE ============ */
   .marquee{
     background:var(--azul); color:var(--blanco);
     padding:16px 0; border-top:3px solid var(--negro); border-bottom:3px solid var(--negro);
@@ -173,7 +157,6 @@
   .marquee-track span::after{content:"✦"; color:var(--naranja); font-size:15px;}
   @keyframes scrollMarquee{from{transform:translateX(0);} to{transform:translateX(-50%);}}
 
-  /* ============ SECCIONES ============ */
   section{padding:96px 0;}
   .section-head{max-width:640px; margin-bottom:54px;}
   .tag{
@@ -187,7 +170,6 @@
   }
   .section-head p{margin-top:18px; font-size:17px; color:#46443e; line-height:1.6;}
 
-  /* ============ SERVICIOS ============ */
   .services{background:var(--negro); color:var(--crema);}
   .services .tag{color:var(--naranja);}
   .services .section-head p{color:#b8b6c0;}
@@ -202,7 +184,6 @@
   .service-card h3{font-family:var(--display); font-weight:700; font-size:21px; margin-bottom:12px; line-height:1.2; text-transform:uppercase;}
   .service-card p{font-size:15px; color:#aeacb6; line-height:1.6;}
 
-  /* ============ PORTAFOLIO ============ */
   .work-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:26px;}
   @media (max-width:760px){.work-grid{grid-template-columns:1fr;}}
 
@@ -233,7 +214,6 @@
   .work-info h3{font-family:var(--display); font-weight:700; font-size:22px; margin-bottom:8px; text-transform:uppercase; color:var(--azul);}
   .work-info p{font-size:14.5px; color:#5a584f; line-height:1.55;}
 
-  /* ============ SOBRE NOSOTROS ============ */
   .about{display:grid; grid-template-columns:0.85fr 1.15fr; gap:60px; align-items:center;}
   @media (max-width:900px){.about{grid-template-columns:1fr;}}
 
@@ -260,7 +240,6 @@
   .about-list li{display:flex; align-items:flex-start; gap:12px; font-weight:600; font-size:15px;}
   .about-list li::before{content:"✦"; color:var(--azul); flex-shrink:0; margin-top:1px;}
 
-  /* ============ TESTIMONIOS ============ */
   .testimonials{background:var(--azul); color:var(--blanco);}
   .testimonials .tag{color:var(--negro); background:var(--crema); padding:6px 12px; border-radius:8px;}
   .test-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
@@ -276,7 +255,6 @@
   .test-person strong{display:block; font-size:14px;}
   .test-person span{font-size:13px; color:#c2c9f0;}
 
-  /* ============ CONTACTO ============ */
   .contact{text-align:center;}
   .contact h2{font-family:var(--display); font-weight:700; text-transform:uppercase; font-size:clamp(32px,5.8vw,64px); line-height:1.05; margin-bottom:24px;}
   .contact h2 span{color:var(--naranja);}
@@ -294,7 +272,6 @@
   .contact-alt{margin-top:48px; display:flex; justify-content:center; gap:28px; flex-wrap:wrap;}
   .contact-alt a{display:inline-flex; align-items:center; gap:8px; font-weight:700; font-size:15px; padding:10px 0; border-bottom:2.5px solid var(--negro);}
 
-  /* ============ FOOTER ============ */
   footer{background:var(--negro); color:var(--crema); padding:48px 0 26px;}
   .footer-top{
     display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:30px;
@@ -326,7 +303,6 @@
 </head>
 <body>
 
-<!-- ============ HEADER ============ -->
 <header>
   <nav class="nav">
     <a href="#top"><img src="img/logo.png" alt="Equipo Creativo" class="logo-img"></a>
@@ -340,12 +316,10 @@
   </nav>
 </header>
 
-<!-- ============ HERO ============ -->
 <section class="hero" id="top">
   <div class="wrap hero-grid">
     <div>
       <div class="eyebrow"><span class="pulse"></span> Disponibles para nuevos proyectos</div>
-      <!-- EDITA AQUÍ: titular principal -->
       <h1>Hacemos que tu marca <span class="hl">se note</span> en <span class="hl2">redes</span></h1>
       <p class="lead">Agencia de marketing digital en Mérida. Branding, contenido y estrategia para marcas que quieren conectar de verdad con su audiencia.</p>
       <div class="hero-ctas">
@@ -362,14 +336,12 @@
   </div>
 </section>
 
-<!-- ============ MARQUEE ============ -->
 <div class="marquee">
   <div class="marquee-track">
     <span>BRANDING</span><span>REDES SOCIALES</span><span>IDENTIDAD VISUAL</span><span>CONTENIDO</span><span>ESTRATEGIA</span><span>BRANDING</span><span>REDES SOCIALES</span><span>IDENTIDAD VISUAL</span><span>CONTENIDO</span><span>ESTRATEGIA</span>
   </div>
 </div>
 
-<!-- ============ SERVICIOS ============ -->
 <section class="services" id="servicios">
   <div class="wrap">
     <div class="section-head reveal">
@@ -378,7 +350,6 @@
       <p>Cada proyecto parte de encontrar la voz propia de tu marca, y traducirla en algo visual y estratégico.</p>
     </div>
     <div class="services-grid">
-      <!-- EDITA AQUÍ: tus servicios -->
       <div class="service-card">
         <div class="service-num">Servicio</div>
         <h3>Branding estratégico</h3>
@@ -413,7 +384,6 @@
   </div>
 </section>
 
-<!-- ============ PORTAFOLIO ============ -->
 <section id="trabajo">
   <div class="wrap">
     <div class="section-head reveal">
@@ -422,8 +392,6 @@
       <p>Una selección de proyectos reales donde ayudamos a marcas e instituciones a contar mejor su historia.</p>
     </div>
     <div class="work-grid">
-      <!-- EDITA AQUÍ: cada tarjeta es un proyecto real. Para cambiar la imagen,
-           reemplaza el archivo correspondiente dentro de la carpeta /img -->
       <div class="work-card">
         <div class="work-thumb"><img src="img/proyecto-frapools.jpg" alt="Proyecto Frapool's - feed de Instagram"></div>
         <div class="work-info">
@@ -476,7 +444,6 @@
   </div>
 </section>
 
-<!-- ============ SOBRE NOSOTROS ============ -->
 <section id="nosotros">
   <div class="wrap about">
     <div class="about-visual reveal">
@@ -490,7 +457,6 @@
     </div>
     <div class="about-content reveal">
       <span class="tag">Quiénes somos</span>
-      <!-- EDITA AQUÍ: tu historia -->
       <h2>Diseño con mente estratégica y alma de explorador</h2>
       <p>Equipo Creativo nace de la idea de que en el diseño todo está ahí por algo: cada color, tipografía e imagen es una pieza clave para construir una identidad que conecte de verdad con su audiencia.</p>
       <p>Combinamos branding, estrategia y producción de contenido para que cada marca —ya sea un restaurante, una marca personal o una institución— encuentre su propia voz visual.</p>
@@ -503,7 +469,6 @@
   </div>
 </section>
 
-<!-- ============ TESTIMONIOS ============ -->
 <section class="testimonials" id="opiniones">
   <div class="wrap">
     <div class="section-head reveal">
@@ -511,7 +476,6 @@
       <h2>Clientes que ya están viendo resultados</h2>
     </div>
     <div class="test-grid">
-      <!-- EDITA AQUÍ: testimonios reales de tus clientes -->
       <div class="test-card">
         <p class="test-quote">"El manual de identidad que nos hicieron le dio seriedad y reconocimiento inmediato a nuestras publicaciones. Ahora todo se ve coherente."</p>
         <div class="test-person">
@@ -537,14 +501,11 @@
   </div>
 </section>
 
-<!-- ============ CONTACTO ============ -->
 <section class="contact" id="contacto">
   <div class="wrap">
     <h2>¿Listo para que tu marca <span>se note?</span></h2>
     <p class="lead">Cuéntanos sobre tu proyecto y te responderemos pronto con una propuesta inicial.</p>
 
-    <!-- EDITA AQUÍ: este formulario no envía datos por sí solo.
-         Conéctalo con un servicio como Formspree, o usa los enlaces directos de abajo -->
     <form class="contact-form" onsubmit="event.preventDefault(); alert('¡Gracias! Te contactaremos pronto. (Conecta este formulario a tu correo o WhatsApp)');">
       <div>
         <label for="nombre">Nombre</label>
@@ -562,7 +523,6 @@
     </form>
 
     <div class="contact-alt">
-      <!-- EDITA AQUÍ: tu número de WhatsApp real y correo -->
       <a href="https://wa.me/529811815486" target="_blank">💬 WhatsApp directo</a>
       <a href="mailto:angelpoolafpc16@gmail.com">✉️ Escríbenos</a>
       <a href="https://instagram.com/soyangel_che" target="_blank">📷 @soyangel_che</a>
@@ -570,12 +530,10 @@
   </div>
 </section>
 
-<!-- ============ FOOTER ============ -->
 <footer>
   <div class="wrap">
     <div class="footer-top">
       <img src="img/logo.png" alt="Equipo Creativo" class="footer-logo-img">
-      <!-- EDITA AQUÍ: tus redes sociales -->
       <div class="footer-social">
         <a href="https://instagram.com/soyangel_che" target="_blank" aria-label="Instagram">IG</a>
         <a href="#" aria-label="Facebook">FB</a>
@@ -589,7 +547,6 @@
   </div>
 </footer>
 
-<!-- Botón flotante de WhatsApp -->
 <a href="https://wa.me/529811815486" target="_blank" class="float-wa" aria-label="Escríbenos por WhatsApp">💬</a>
 
 <script>
