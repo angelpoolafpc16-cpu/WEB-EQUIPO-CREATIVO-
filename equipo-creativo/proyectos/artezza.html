@@ -38,7 +38,7 @@
   body::before{
     content:""; position:fixed; inset:0; z-index:-1;
     background:url("../img/marca/trama-azul.png");
-    background-size:520px; background-repeat:repeat;
+    background-size:cover; background-position:center; background-repeat:no-repeat;
     opacity:0.05; pointer-events:none;
   }
   img{max-width:100%;display:block;}
@@ -79,7 +79,7 @@
   .proj-hero::before{
     content:""; position:absolute; inset:0;
     background:url("../img/marca/trama-blanca.png");
-    background-size:560px; background-repeat:repeat;
+    background-size:cover; background-position:center; background-repeat:no-repeat;
     opacity:0.07; pointer-events:none;
   }
   .proj-hero .wrap{position:relative;}
@@ -166,7 +166,7 @@
   .dark::before{
     content:""; position:absolute; inset:0;
     background:url("../img/marca/trama-blanca.png");
-    background-size:620px; background-repeat:repeat;
+    background-size:cover; background-position:center; background-repeat:no-repeat;
     opacity:0.05; pointer-events:none;
   }
   .dark .wrap{position:relative;}
@@ -192,22 +192,52 @@
   @media (max-width:900px){.gallery{grid-template-columns:repeat(2,1fr);}}
   @media (max-width:620px){.gallery{grid-template-columns:1fr;}}
   .gallery-item{
-    border:3px solid var(--azul); border-radius:var(--radius);
-    overflow:hidden; background:var(--blanco); position:relative;
-    transition:transform .3s ease, box-shadow .3s ease;
+    border-radius:var(--radius);
+    overflow:hidden; position:relative;
+    transition:transform .3s ease;
   }
-  .gallery-item:hover{transform:translateY(-6px) rotate(-.6deg); box-shadow:8px 10px 0 var(--azul);}
+  .gallery-item:hover{transform:translateY(-4px);}
   .gallery-item img{width:100%; height:100%; object-fit:cover; transition:transform .5s ease;}
   .gallery-item:hover img{transform:scale(1.04);}
 
-  .gallery > .featured{grid-column:span 2; grid-row:span 2;}
-  @media (max-width:620px){.gallery > .featured{grid-column:span 1; grid-row:span 1;}}
   .proj-meta{display:flex; gap:10px; flex-wrap:wrap; margin-top:26px;}
   .proj-meta span{
     font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.04em;
     background:rgba(255,255,255,.14); border:2px solid rgba(255,255,255,.45);
     color:var(--blanco); padding:7px 14px; border-radius:999px;
   }
+
+  /* ===== CARRUSEL ===== */
+  .carousel-wrap{position:relative;}
+  .carousel{
+    display:flex; gap:20px; overflow-x:auto;
+    scroll-snap-type:x mandatory; scroll-behavior:smooth;
+    padding:4px 4px 18px; -ms-overflow-style:none; scrollbar-width:none;
+  }
+  .carousel::-webkit-scrollbar{display:none;}
+  .carousel .gallery-item{
+    flex:0 0 340px; scroll-snap-align:start;
+    border-radius:var(--radius); overflow:hidden;
+    transition:transform .3s ease;
+  }
+  @media (max-width:620px){.carousel .gallery-item{flex-basis:78vw;}}
+  .carousel .gallery-item img{width:100%; height:100%; object-fit:cover;}
+  .carousel-nav{display:flex; gap:12px; justify-content:flex-end; margin-top:18px;}
+  .carousel-btn{
+    width:40px; height:40px; border-radius:50%;
+    border:none; cursor:pointer;
+    background:rgba(22,33,107,.12); color:var(--azul-osc);
+    font-size:20px; font-weight:700; line-height:1;
+    display:flex; align-items:center; justify-content:center;
+    transition:background .2s ease, color .2s ease, opacity .2s ease;
+  }
+  .carousel-btn:hover{background:var(--azul); color:var(--blanco);}
+  .carousel-btn:disabled{opacity:.35; cursor:default; background:rgba(22,33,107,.12); color:var(--azul-osc);}
+
+  /* ===== BRANDING / IDENTIDAD ===== */
+  .brand-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:40px; align-items:center;}
+  @media (max-width:760px){.brand-grid{grid-template-columns:1fr;}}
+  .brand-grid img{width:100%; height:auto;}
 
   /* ===== FRASE GIGANTE ===== */
   .statement{
@@ -233,7 +263,7 @@
   .proj-cta::before{
     content:""; position:absolute; inset:0;
     background:url("../img/marca/trama-blanca.png");
-    background-size:520px; background-repeat:repeat;
+    background-size:cover; background-position:center; background-repeat:no-repeat;
     opacity:0.08; pointer-events:none;
   }
   .proj-cta > *{position:relative;}
@@ -357,15 +387,33 @@
       <h2>El trabajo, <span class="hl">pieza por pieza</span></h2>
       <p>Piezas gráficas reales del proyecto: contenido para redes, promociones, menús y branding aplicado.</p>
     </div>
-    <div class="gallery reveal-stagger">
-      <div class="gallery-item featured"><img src="../img/artezza/artezza-1.jpg" alt="Pieza gráfica de Artezza" loading="lazy"></div>
-      <div class="gallery-item"><img src="../img/artezza/artezza-2.jpg" alt="Pieza gráfica de Artezza" loading="lazy"></div>
-      <div class="gallery-item"><img src="../img/artezza/artezza-3.jpg" alt="Pieza gráfica de Artezza" loading="lazy"></div>
-      <div class="gallery-item"><img src="../img/artezza/artezza-4.jpg" alt="Pieza gráfica de Artezza" loading="lazy"></div>
-      <div class="gallery-item"><img src="../img/artezza/artezza-5.jpg" alt="Pieza gráfica de Artezza" loading="lazy"></div>
-      <div class="gallery-item"><img src="../img/artezza/artezza-6.jpg" alt="Pieza gráfica de Artezza" loading="lazy"></div>
-      <div class="gallery-item"><img src="../img/artezza/artezza-7.jpg" alt="Pieza gráfica de Artezza" loading="lazy"></div>
-      <div class="gallery-item"><img src="../img/artezza/artezza-8.jpg" alt="Pieza gráfica de Artezza" loading="lazy"></div>
+    <div class="carousel-wrap reveal">
+      <div class="carousel">
+        <div class="gallery-item"><img src="../img/artezza/artezza-1.jpg" alt="Pieza gráfica de Artezza" loading="lazy"></div>
+        <div class="gallery-item"><img src="../img/artezza/artezza-2.jpg" alt="Pieza gráfica de Artezza" loading="lazy"></div>
+        <div class="gallery-item"><img src="../img/artezza/artezza-3.jpg" alt="Pieza gráfica de Artezza" loading="lazy"></div>
+        <div class="gallery-item"><img src="../img/artezza/artezza-4.jpg" alt="Pieza gráfica de Artezza" loading="lazy"></div>
+        <div class="gallery-item"><img src="../img/artezza/artezza-5.jpg" alt="Pieza gráfica de Artezza" loading="lazy"></div>
+      </div>
+      <div class="carousel-nav">
+        <button class="carousel-btn prev" aria-label="Anterior">‹</button>
+        <button class="carousel-btn next" aria-label="Siguiente">›</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="tag">Identidad visual</span>
+      <h2>Branding <span class="hl">y aplicaciones</span></h2>
+      <p>Manual de identidad, sistema visual y la marca aplicada en el mundo real.</p>
+    </div>
+    <div class="brand-grid">
+      <img src="../img/artezza/branding-1.png" alt="Identidad visual de Artezza" loading="lazy" class="reveal">
+      <img src="../img/artezza/branding-2.png" alt="Identidad visual de Artezza" loading="lazy" class="reveal">
+      <img src="../img/artezza/branding-3.png" alt="Identidad visual de Artezza" loading="lazy" class="reveal">
     </div>
   </div>
 </section>
@@ -427,6 +475,22 @@
     });
   },{threshold:0.4});
   counters.forEach(el=>countObs.observe(el));
+
+  document.querySelectorAll('.carousel-wrap').forEach(wrap=>{
+    const car = wrap.querySelector('.carousel');
+    const prev = wrap.querySelector('.carousel-btn.prev');
+    const next = wrap.querySelector('.carousel-btn.next');
+    const step = ()=> car.querySelector('.gallery-item').getBoundingClientRect().width + 20;
+    function update(){
+      prev.disabled = car.scrollLeft <= 4;
+      next.disabled = car.scrollLeft >= car.scrollWidth - car.clientWidth - 4;
+    }
+    prev.addEventListener('click', ()=>car.scrollBy({left:-step()*2, behavior:'smooth'}));
+    next.addEventListener('click', ()=>car.scrollBy({left:step()*2, behavior:'smooth'}));
+    car.addEventListener('scroll', update, {passive:true});
+    window.addEventListener('resize', update);
+    update();
+  });
 </script>
 
 </body>
