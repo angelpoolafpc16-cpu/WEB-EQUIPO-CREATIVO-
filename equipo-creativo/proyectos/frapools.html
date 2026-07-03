@@ -193,6 +193,15 @@
   .gallery-item img{width:100%; height:100%; object-fit:cover; transition:transform .5s ease;}
   .gallery-item:hover img{transform:scale(1.04);}
 
+  .gallery > .featured{grid-column:span 2; grid-row:span 2;}
+  @media (max-width:620px){.gallery > .featured{grid-column:span 1; grid-row:span 1;}}
+  .proj-meta{display:flex; gap:10px; flex-wrap:wrap; margin-top:26px;}
+  .proj-meta span{
+    font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.04em;
+    background:rgba(255,255,255,.14); border:2px solid rgba(255,255,255,.45);
+    color:var(--blanco); padding:7px 14px; border-radius:999px;
+  }
+
   /* ===== FRASE GIGANTE ===== */
   .statement{
     text-align:center; padding:110px 0;
@@ -292,6 +301,7 @@
           <div class="stat"><strong data-count="4"><span>+</span>0</strong><small>Aplicaciones de marca</small></div>
           <div class="stat"><strong data-count="1"><span>×</span>0</strong><small>Identidad completa</small></div>
         </div>
+        <div class="proj-meta"><span>Branding</span><span>Feed</span><span>Menús</span><span>Producto</span></div>
       </div>
       <img src="../img/frapools/logo.png" alt="Logotipo de Frapool's" class="proj-logo">
     </div>
@@ -342,7 +352,7 @@
       <p>Piezas gráficas reales del proyecto: contenido para redes, promociones, menús y branding aplicado.</p>
     </div>
     <div class="gallery reveal-stagger">
-      <div class="gallery-item"><img src="../img/frapools/frapools-2.jpg" alt="Pieza gráfica de Frapool's" loading="lazy"></div>
+      <div class="gallery-item featured"><img src="../img/frapools/frapools-2.jpg" alt="Pieza gráfica de Frapool's" loading="lazy"></div>
       <div class="gallery-item"><img src="../img/frapools/frapools-3.jpg" alt="Pieza gráfica de Frapool's" loading="lazy"></div>
       <div class="gallery-item"><img src="../img/frapools/frapools-4.jpg" alt="Pieza gráfica de Frapool's" loading="lazy"></div>
       <div class="gallery-item"><img src="../img/frapools/frapools-5.jpg" alt="Pieza gráfica de Frapool's" loading="lazy"></div>
@@ -372,7 +382,7 @@
       <a href="../index.html#contacto" class="btn">Hablemos →</a>
     </div>
     <div class="proj-nav">
-      <a href="../index.html#trabajo">← Todos los proyectos</a>
+      <a href="cecas.html">← Proyecto anterior: CECAS MX</a>
       <a href="larehabi.html">Siguiente proyecto: La Rehabi →</a>
     </div>
   </div>
