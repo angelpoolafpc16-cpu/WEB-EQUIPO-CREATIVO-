@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Frapool's — Portafolio | Equipo Creativo</title>
+<meta name="description" content="Branding e identidad visual para Frapool's: manual de marca, feed, menús y contenido para redes sociales.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700;800&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --azul:#2946BF;
+    --azul-osc:#16216B;
+    --naranja:#FC5F22;
+    --crema:#F4F2EC;
+    --blanco:#FFFFFF;
+
+    --display:'League Spartan', sans-serif;
+    --body:'Montserrat', sans-serif;
+
+    --radius:20px;
+    --maxw:1220px;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--crema);
+    color:var(--azul-osc);
+    font-family:var(--body);
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  body::before{
+    content:""; position:fixed; inset:0; z-index:-1;
+    background:url("../img/marca/trama-azul.png");
+    background-size:520px; background-repeat:repeat;
+    opacity:0.05; pointer-events:none;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important;}
+  }
+  :focus-visible{outline:3px solid var(--naranja); outline-offset:3px;}
+
+  h1,h2,h3{font-family:var(--display); font-weight:700;}
+
+  header{
+    position:sticky; top:0; z-index:100;
+    background:var(--crema);
+    border-bottom:3px solid var(--azul);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 28px; max-width:var(--maxw); margin:0 auto;
+  }
+  .logo-img{height:42px; width:auto;}
+  .nav-back{
+    background:var(--azul); color:var(--blanco);
+    padding:12px 24px; border-radius:999px;
+    font-weight:700; font-size:14px;
+    transition:transform .2s ease, background .2s ease;
+    white-space:nowrap;
+  }
+  .nav-back:hover{background:var(--naranja); transform:translateY(-2px);}
+
+  .proj-hero{
+    background:var(--naranja); color:var(--blanco);
+    padding:90px 0 70px; position:relative; overflow:hidden;
+  }
+  .proj-hero::before{
+    content:""; position:absolute; inset:0;
+    background:url("../img/marca/trama-blanca.png");
+    background-size:560px; background-repeat:repeat;
+    opacity:0.07; pointer-events:none;
+  }
+  .proj-hero .wrap{position:relative;}
+  .proj-hero-grid{display:grid; grid-template-columns:1.2fr 0.8fr; gap:50px; align-items:center;}
+  @media (max-width:860px){.proj-hero-grid{grid-template-columns:1fr;}}
+  .proj-logo{max-height:230px; width:auto; margin:0 auto;}
+  .crumb{
+    display:inline-block; font-size:13px; font-weight:800;
+    text-transform:uppercase; letter-spacing:.08em;
+    background:var(--azul); color:var(--blanco);
+    padding:8px 16px; border-radius:999px; margin-bottom:22px;
+  }
+  .proj-hero h1{
+    font-size:clamp(44px, 7vw, 84px); line-height:1;
+    text-transform:uppercase; margin-bottom:20px;
+  }
+  .proj-hero p.lead{font-size:18px; line-height:1.65; max-width:520px; font-weight:500;}
+  .proj-meta{display:flex; gap:12px; flex-wrap:wrap; margin-top:28px;}
+  .proj-meta span{
+    font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.04em;
+    background:var(--blanco); color:var(--naranja);
+    padding:7px 14px; border-radius:999px;
+  }
+
+  section{padding:80px 0;}
+  .section-head{max-width:640px; margin-bottom:48px;}
+  .tag{
+    display:inline-block; font-size:13px; font-weight:800;
+    text-transform:uppercase; letter-spacing:.08em; color:var(--naranja);
+    margin-bottom:14px;
+  }
+  .section-head h2{
+    text-transform:uppercase;
+    font-size:clamp(30px, 4vw, 48px); line-height:1.05;
+  }
+  .section-head p{margin-top:16px; font-size:17px; color:#46443e; line-height:1.6;}
+
+  .gallery{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  @media (max-width:900px){.gallery{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:620px){.gallery{grid-template-columns:1fr;}}
+  .gallery-item{
+    border:3px solid var(--azul); border-radius:var(--radius);
+    overflow:hidden; background:var(--blanco);
+    transition:transform .3s ease, box-shadow .3s ease;
+  }
+  .gallery-item:hover{transform:translateY(-6px); box-shadow:8px 10px 0 var(--azul);}
+  .gallery-item img{width:100%; height:100%; object-fit:cover;}
+
+  .proj-cta{
+    background:var(--azul); color:var(--blanco);
+    text-align:center; border-radius:var(--radius);
+    padding:70px 30px; position:relative; overflow:hidden;
+  }
+  .proj-cta::before{
+    content:""; position:absolute; inset:0;
+    background:url("../img/marca/trama-blanca.png");
+    background-size:520px; background-repeat:repeat;
+    opacity:0.1; pointer-events:none;
+  }
+  .proj-cta > *{position:relative;}
+  .proj-cta h2{font-size:clamp(28px,4.4vw,48px); text-transform:uppercase; margin-bottom:16px;}
+  .proj-cta p{font-size:17px; margin-bottom:30px; color:#dfe4fb;}
+  .btn{
+    display:inline-flex; align-items:center; gap:10px;
+    padding:16px 30px; border-radius:999px;
+    font-weight:700; font-size:15px; cursor:pointer;
+    background:var(--naranja); color:var(--blanco);
+    border:2px solid var(--naranja);
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .btn:hover{transform:translate(-3px,-3px); box-shadow:5px 5px 0 var(--blanco);}
+
+  footer{padding:40px 0; text-align:center; font-size:13px; color:var(--azul-osc);}
+  footer img{height:38px; margin:0 auto 14px;}
+
+  .reveal{opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+  .reveal-stagger > *{opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal-stagger.in > *{opacity:1; transform:translateY(0);}
+  .reveal-stagger.in > *:nth-child(1){transition-delay:.05s;}
+  .reveal-stagger.in > *:nth-child(2){transition-delay:.12s;}
+  .reveal-stagger.in > *:nth-child(3){transition-delay:.19s;}
+  .reveal-stagger.in > *:nth-child(4){transition-delay:.26s;}
+  .reveal-stagger.in > *:nth-child(5){transition-delay:.33s;}
+  .reveal-stagger.in > *:nth-child(6){transition-delay:.4s;}
+  .reveal-stagger.in > *:nth-child(7){transition-delay:.47s;}
+  .reveal-stagger.in > *:nth-child(8){transition-delay:.54s;}
+  .reveal-stagger.in > *:nth-child(9){transition-delay:.61s;}
+  .reveal-stagger.in > *:nth-child(10){transition-delay:.68s;}
+  .reveal-stagger.in > *:nth-child(11){transition-delay:.75s;}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="../index.html"><img src="../img/marca/logo-azul.png" alt="Equipo Creativo" class="logo-img"></a>
+    <a href="../index.html#trabajo" class="nav-back">← Volver al portafolio</a>
+  </nav>
+</header>
+
+<section class="proj-hero">
+  <div class="wrap proj-hero-grid">
+    <div>
+      <span class="crumb">Portafolio · Comercial</span>
+      <h1>Frapool's</h1>
+      <p class="lead">Manual de identidad visual y línea gráfica para un restaurante con ambiente juvenil y acogedor. Desarrollamos el branding completo: feed para redes sociales, menús y aplicaciones de marca sobre producto.</p>
+      <div class="proj-meta">
+        <span>Branding</span>
+        <span>Identidad visual</span>
+        <span>Redes sociales</span>
+        <span>Menús</span>
+      </div>
+    </div>
+    <img src="../img/frapools/logo.png" alt="Logotipo de Frapool's" class="proj-logo">
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="tag">El proyecto</span>
+      <h2>Un momento para recordar</h2>
+      <p>Piezas gráficas reales del proyecto: contenido para redes, promociones, menús y branding aplicado que reflejan la personalidad divertida y cercana de la marca.</p>
+    </div>
+    <div class="gallery reveal-stagger">
+      <div class="gallery-item"><img src="../img/frapools/frapools-2.jpg" alt="Pieza gráfica de Frapool's" loading="lazy"></div>
+      <div class="gallery-item"><img src="../img/frapools/frapools-3.jpg" alt="Pieza gráfica de Frapool's" loading="lazy"></div>
+      <div class="gallery-item"><img src="../img/frapools/frapools-4.jpg" alt="Pieza gráfica de Frapool's" loading="lazy"></div>
+      <div class="gallery-item"><img src="../img/frapools/frapools-5.jpg" alt="Pieza gráfica de Frapool's" loading="lazy"></div>
+      <div class="gallery-item"><img src="../img/frapools/frapools-6.jpg" alt="Pieza gráfica de Frapool's" loading="lazy"></div>
+      <div class="gallery-item"><img src="../img/frapools/frapools-7.jpg" alt="Pieza gráfica de Frapool's" loading="lazy"></div>
+      <div class="gallery-item"><img src="../img/frapools/frapools-8.jpg" alt="Pieza gráfica de Frapool's" loading="lazy"></div>
+      <div class="gallery-item"><img src="../img/frapools/frapools-9.jpg" alt="Pieza gráfica de Frapool's" loading="lazy"></div>
+      <div class="gallery-item"><img src="../img/frapools/frapools-10.jpg" alt="Pieza gráfica de Frapool's" loading="lazy"></div>
+      <div class="gallery-item"><img src="../img/frapools/frapools-11.jpg" alt="Pieza gráfica de Frapool's" loading="lazy"></div>
+      <div class="gallery-item"><img src="../img/frapools/frapools-12.jpg" alt="Pieza gráfica de Frapool's" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div class="proj-cta reveal">
+      <h2>¿Quieres algo así para tu marca?</h2>
+      <p>Cuéntanos sobre tu proyecto y armamos una propuesta a tu medida.</p>
+      <a href="../index.html#contacto" class="btn">Hablemos →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <img src="../img/marca/logo-azul.png" alt="Equipo Creativo">
+  <div>© 2026 Equipo Creativo. Todos los derechos reservados. · Mérida, Yucatán</div>
+</footer>
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal, .reveal-stagger');
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('in');
+        observer.unobserve(entry.target);
+      }
+    });
+  },{threshold:0.1});
+  revealEls.forEach(el=>observer.observe(el));
+</script>
+
+</body>
+</html>
