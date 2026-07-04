@@ -549,7 +549,7 @@
     <h2>¿Listo para que tu marca <span>se note?</span></h2>
     <p class="lead">Cuéntanos sobre tu proyecto y te responderemos pronto con una propuesta inicial.</p>
 
-    <form class="contact-form" onsubmit="event.preventDefault(); alert('¡Gracias! Te contactaremos pronto. (Conecta este formulario a tu correo o WhatsApp)');">
+    <form class="contact-form" id="form-contacto">
       <div>
         <label for="nombre">Nombre</label>
         <input type="text" id="nombre" name="nombre" placeholder="¿Cómo te llamas?" required>
@@ -562,7 +562,7 @@
         <label for="mensaje">Cuéntanos sobre tu proyecto</label>
         <textarea id="mensaje" name="mensaje" rows="4" placeholder="¿Qué necesitas para tu marca?" required></textarea>
       </div>
-      <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+      <button type="submit" class="btn btn-primary">Enviar por WhatsApp 💬</button>
     </form>
 
     <div class="contact-alt">
@@ -603,6 +603,16 @@
     });
   },{threshold:0.15});
   revealEls.forEach(el=>observer.observe(el));
+
+  document.getElementById('form-contacto').addEventListener('submit', function(e){
+    e.preventDefault();
+    const nombre = document.getElementById('nombre').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const mensaje = document.getElementById('mensaje').value.trim();
+    const texto = `¡Hola Equipo Creativo! 👋\n\n*Nombre:* ${nombre}\n*Correo:* ${email}\n*Proyecto:* ${mensaje}\n\nVengo desde el formulario de la página web.`;
+    window.open('https://wa.me/529994399237?text=' + encodeURIComponent(texto), '_blank');
+    this.reset();
+  });
 
   const slides = document.querySelectorAll('.about-slide');
   let slideIdx = 0;
