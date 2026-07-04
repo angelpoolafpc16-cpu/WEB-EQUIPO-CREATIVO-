@@ -54,7 +54,7 @@
 
   header{
     position:sticky; top:0; z-index:100;
-    background:var(--crema);
+    background:var(--blanco);
   }
   .nav{
     display:flex; align-items:center; justify-content:space-between;
@@ -211,7 +211,7 @@
   .work-card:hover{box-shadow:0 18px 40px rgba(22,33,107,.14);}
 
   .work-thumb{
-    aspect-ratio:16/10;
+    aspect-ratio:1050/551;
     width:100%;
     overflow:hidden;
   }
@@ -242,7 +242,12 @@
     overflow:hidden;
     display:flex; align-items:center; justify-content:center;
   }
-  .about-stack img{width:100%; height:100%; object-fit:cover; opacity:1;}
+  .about-stack img{width:100%; height:100%; object-fit:cover;}
+  .about-slide{
+    position:absolute; inset:0;
+    opacity:0; transition:opacity 1s ease;
+  }
+  .about-slide.active{opacity:1;}
   .about-stat{
     background:var(--negro); color:var(--azul-osc); border-radius:14px;
     padding:18px 20px; position:absolute; bottom:-22px; right:-22px;
@@ -421,7 +426,7 @@
     </div>
     <div class="work-grid reveal-stagger">
       <a class="work-card" href="proyectos/frapools.html">
-        <div class="work-thumb"><img src="img/frapools/frapools-3.jpg" alt="Proyecto Frapool's - feed de Instagram"></div>
+        <div class="work-thumb"><img src="img/banners/frapools.jpg" alt="Proyecto Frapool's - feed de Instagram"></div>
         <div class="work-info">
           <div class="tag-row"><span>Comercial</span><span>Branding</span></div>
           <h3>Frapool's</h3>
@@ -430,7 +435,7 @@
         </div>
       </a>
       <a class="work-card" href="proyectos/larehabi.html">
-        <div class="work-thumb"><img src="img/larehabi/larehabi-4.jpg" alt="Proyecto La Rehabi - feed de Instagram"></div>
+        <div class="work-thumb"><img src="img/banners/larehabi.jpg" alt="Proyecto La Rehabi - feed de Instagram"></div>
         <div class="work-info">
           <div class="tag-row"><span>Comercial</span><span>Rebranding</span></div>
           <h3>La Rehabi</h3>
@@ -439,7 +444,7 @@
         </div>
       </a>
       <a class="work-card" href="proyectos/artezza.html">
-        <div class="work-thumb"><img src="img/artezza/artezza-4.jpg" alt="Proyecto Artezza - feed de Instagram"></div>
+        <div class="work-thumb"><img src="img/banners/artezza.jpg" alt="Proyecto Artezza - feed de Instagram"></div>
         <div class="work-info">
           <div class="tag-row"><span>Comercial</span><span>Identidad</span></div>
           <h3>Artezza</h3>
@@ -448,7 +453,7 @@
         </div>
       </a>
       <div class="work-card">
-        <div class="work-thumb"><img src="img/proyecto-remind.jpg" alt="Proyecto REMIND Mérida - feed de Instagram"></div>
+        <div class="work-thumb"><img src="img/banners/remind.jpg" alt="Proyecto REMIND Mérida - feed de Instagram"></div>
         <div class="work-info">
           <div class="tag-row"><span>Divulgación</span><span>Identidad</span></div>
           <h3>REMIND Mérida</h3>
@@ -456,7 +461,7 @@
         </div>
       </div>
       <a class="work-card" href="proyectos/arqueologia.html">
-        <div class="work-thumb"><img src="img/arqueologia/arqueologia-1.jpg" alt="Proyecto Laboratorio de Arqueología UADY - feed de Instagram"></div>
+        <div class="work-thumb"><img src="img/banners/arqueologia.jpg" alt="Proyecto Laboratorio de Arqueología UADY - feed de Instagram"></div>
         <div class="work-info">
           <div class="tag-row"><span>Divulgación</span><span>Institucional</span></div>
           <h3>Laboratorio de Arqueología UADY</h3>
@@ -465,7 +470,7 @@
         </div>
       </a>
       <a class="work-card" href="proyectos/cecas.html">
-        <div class="work-thumb"><img src="img/cecas/cecas-8.jpg" alt="Proyecto CECAS MX 2025 - feed de Instagram"></div>
+        <div class="work-thumb"><img src="img/banners/cecas.jpg" alt="Proyecto CECAS MX 2025 - feed de Instagram"></div>
         <div class="work-info">
           <div class="tag-row"><span>Divulgación</span><span>Evento</span></div>
           <h3>CECAS MX 2025</h3>
@@ -481,7 +486,12 @@
   <div class="wrap about">
     <div class="about-visual reveal">
       <div class="about-stack">
-        <img src="img/020D741F-6B7C-4569-8DD9-058B06150198-4377-000001A5F1D074C8.jpg" alt="Equipo Creativo trabajando con clienta">
+        <img src="img/020D741F-6B7C-4569-8DD9-058B06150198-4377-000001A5F1D074C8.jpg" alt="Trabajo de Equipo Creativo" class="about-slide active">
+        <img src="img/frapools/frapools-3.jpg" alt="Trabajo de Equipo Creativo" class="about-slide">
+        <img src="img/larehabi/larehabi-4.jpg" alt="Trabajo de Equipo Creativo" class="about-slide">
+        <img src="img/artezza/artezza-4.jpg" alt="Trabajo de Equipo Creativo" class="about-slide">
+        <img src="img/arqueologia/arqueologia-4.jpg" alt="Trabajo de Equipo Creativo" class="about-slide">
+        <img src="img/cecas/cecas-8.jpg" alt="Trabajo de Equipo Creativo" class="about-slide">
       </div>
       <div class="about-stat">
         <strong>+6</strong>
@@ -556,9 +566,9 @@
     </form>
 
     <div class="contact-alt">
-      <a href="https://wa.me/529811815486" target="_blank">💬 WhatsApp directo</a>
+      <a href="https://wa.me/529994399237" target="_blank">💬 WhatsApp directo</a>
       <a href="mailto:angelpoolafpc16@gmail.com">✉️ Escríbenos</a>
-      <a href="https://instagram.com/soyangel_che" target="_blank">📷 @soyangel_che</a>
+      <a href="https://www.instagram.com/equipocre.mid?igsh=MXQ3NXIxdmgwcmkyMg==" target="_blank">📷 @equipocre.mid</a>
     </div>
   </div>
 </section>
@@ -568,8 +578,8 @@
     <div class="footer-top">
       <img src="img/marca/logo-azul.png" alt="Equipo Creativo" class="footer-logo-img">
       <div class="footer-social">
-        <a href="https://instagram.com/soyangel_che" target="_blank" aria-label="Instagram">IG</a>
-        <a href="#" aria-label="Facebook">FB</a>
+        <a href="https://www.instagram.com/equipocre.mid?igsh=MXQ3NXIxdmgwcmkyMg==" target="_blank" aria-label="Instagram">IG</a>
+        <a href="https://www.facebook.com/share/1QAPxbgiT9/?mibextid=wwXIfr" target="_blank" aria-label="Facebook">FB</a>
         <a href="#" aria-label="TikTok">TT</a>
       </div>
     </div>
@@ -580,7 +590,7 @@
   </div>
 </footer>
 
-<a href="https://wa.me/529811815486" target="_blank" class="float-wa" aria-label="Escríbenos por WhatsApp">💬</a>
+<a href="https://wa.me/529994399237" target="_blank" class="float-wa" aria-label="Escríbenos por WhatsApp">💬</a>
 
 <script>
   const revealEls = document.querySelectorAll('.reveal, .reveal-stagger');
@@ -593,6 +603,14 @@
     });
   },{threshold:0.15});
   revealEls.forEach(el=>observer.observe(el));
+
+  const slides = document.querySelectorAll('.about-slide');
+  let slideIdx = 0;
+  setInterval(()=>{
+    slides[slideIdx].classList.remove('active');
+    slideIdx = (slideIdx + 1) % slides.length;
+    slides[slideIdx].classList.add('active');
+  }, 6000);
 </script>
 
 </body>
