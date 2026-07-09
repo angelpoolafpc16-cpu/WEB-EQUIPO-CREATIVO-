@@ -73,7 +73,7 @@
   /* ===== HERO ===== */
   .proj-hero{
     background:var(--marca); color:var(--blanco);
-    padding:100px 0 120px; position:relative; overflow:hidden;
+    padding:100px 0 120px; position:relative; overflow:hidden; max-width:100%;
   }
   .proj-hero::before{
     content:""; position:absolute; inset:0;
@@ -314,6 +314,31 @@
   .reveal-stagger.in > *:nth-child(9){transition-delay:.61s;}
   .reveal-stagger.in > *:nth-child(10){transition-delay:.68s;}
   .reveal-stagger.in > *:nth-child(11){transition-delay:.75s;}
+
+  /* ===== OPTIMIZACIÓN MÓVIL ===== */
+  @media (max-width:600px){
+    .wrap{padding:0 20px;}
+    section{padding:60px 0;}
+    .proj-hero{padding:60px 0 80px;}
+    .proj-hero h1{font-size:clamp(40px,12vw,60px); line-height:.98; word-break:break-word; overflow-wrap:anywhere;}
+    .proj-hero-grid{gap:32px; text-align:center;}
+    .proj-hero p.lead{margin-left:auto; margin-right:auto;}
+    .crumb{margin-left:auto; margin-right:auto;}
+    .proj-meta{justify-content:center;}
+    .hero-stats{justify-content:center; gap:8px 0;}
+    .stat{padding:18px 20px 0 0; margin-right:20px;}
+    .stat strong{font-size:clamp(28px,9vw,40px);}
+    .proj-logo, .proj-logo-card{margin-left:auto; margin-right:auto;}
+    .section-head{margin-left:auto; margin-right:auto; text-align:center;}
+    .reto-grid{gap:14px;}
+    .tape-wrap{height:150px;}
+    .carousel .gallery-item{flex-basis:80vw;}
+    .brand-grid{gap:26px; text-align:center;}
+    .statement{padding:70px 0;}
+    .proj-cta{padding:54px 22px;}
+    .proj-nav{gap:20px;}
+    .proj-nav a{font-size:13px;}
+  }
 </style>
 </head>
 <body>
