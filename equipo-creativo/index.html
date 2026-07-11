@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Equipo Creativo — Agencia de Marketing</title>
 <meta name="description" content="Agencia de marketing digital y redes sociales en Mérida. Estrategia, branding y contenido que conecta.">
+<link rel="icon" type="image/png" href="img/marca/favicon.png">
+<link rel="apple-touch-icon" href="img/marca/favicon.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +16,8 @@
   :root{
     --azul:#2946BF;
     --azul-osc:#16216B;
-    --naranja:#FC5F22;
+    --naranja:#F8D858; /* amarillo de marca */
+    --amarillo:#F8D858;
     --negro:#FFFFFF;
     --crema:#F4F2EC;
     --blanco:#FFFFFF;
@@ -77,7 +80,7 @@
     transition:transform .2s ease, background .2s ease;
     white-space:nowrap;
   }
-  .nav-cta:hover{background:var(--naranja); transform:translateY(-2px);}
+  .nav-cta:hover{background:var(--naranja); color:var(--azul-osc); transform:translateY(-2px);}
 
   @media (max-width:860px){
     .nav-links{display:none;}
@@ -107,9 +110,13 @@
     text-transform:uppercase;
     min-height:3.3em;
   }
-  .hero h1 .hl{color:var(--naranja);}
+  .hero h1 .hl{
+    color:var(--azul-osc); background:var(--amarillo);
+    padding:2px 12px; border-radius:6px;
+    box-decoration-break:clone; -webkit-box-decoration-break:clone;
+  }
   .hero h1 .hl2{
-    color:var(--blanco); background:var(--naranja);
+    color:var(--azul-osc); background:var(--naranja);
     padding:2px 14px; display:inline-block; transform:rotate(-2deg);
     border-radius:6px;
   }
@@ -131,7 +138,7 @@
     border:2px solid var(--negro);
     transition:transform .2s ease, box-shadow .2s ease;
   }
-  .btn-primary{background:var(--naranja); color:var(--blanco); border-color:var(--naranja);}
+  .btn-primary{background:var(--naranja); color:var(--azul-osc); border-color:var(--naranja);}
   .btn-primary:hover{transform:translate(-3px,-3px); box-shadow:5px 5px 0 var(--azul);}
   .btn-ghost{background:transparent; color:var(--azul); border-color:var(--azul);}
   .btn-ghost:hover{transform:translate(-3px,-3px); box-shadow:5px 5px 0 var(--naranja);}
@@ -246,7 +253,7 @@
   .work-info .tag-row{display:flex; gap:8px; margin-bottom:12px; flex-wrap:wrap;}
   .work-info .tag-row span{
     font-size:11px; font-weight:800; text-transform:uppercase;
-    background:var(--naranja); color:var(--blanco);
+    background:var(--naranja); color:var(--azul-osc);
     padding:5px 12px; border-radius:999px;
   }
   .work-info h3{font-family:var(--display); font-weight:700; font-size:22px; margin-bottom:8px; text-transform:uppercase; color:var(--azul);}
@@ -254,7 +261,7 @@
   .work-card{display:block;}
   .work-link{
     display:inline-block; margin-top:14px;
-    font-weight:800; font-size:14px; color:var(--naranja);
+    font-weight:800; font-size:14px; color:var(--azul);
     text-transform:uppercase; letter-spacing:.04em;
   }
 
@@ -279,10 +286,10 @@
     box-shadow:6px 6px 0 var(--naranja);
     border:3px solid var(--azul-osc);
   }
-  .about-stat strong{font-family:var(--display); font-weight:700; font-size:30px; display:block; color:var(--naranja);}
+  .about-stat strong{font-family:var(--display); font-weight:700; font-size:30px; display:block; color:var(--azul);}
   .about-stat span{font-size:12px; color:var(--azul-osc); text-transform:uppercase; letter-spacing:.05em;}
 
-  .about-content .tag{color:var(--naranja);}
+  .about-content .tag{color:var(--azul);}
   .about-content h2{font-family:var(--display); font-weight:700; text-transform:uppercase; font-size:clamp(28px,4vw,44px); line-height:1.1; margin-bottom:22px;}
   .about-content p{font-size:16px; line-height:1.7; color:#46443e; margin-bottom:18px;}
   .about-list{list-style:none; margin-top:24px; display:grid; gap:14px;}
@@ -299,14 +306,14 @@
   .test-avatar{
     width:44px; height:44px; border-radius:50%; background:var(--naranja);
     display:flex; align-items:center; justify-content:center;
-    font-family:var(--display); font-weight:700; color:var(--blanco); font-size:16px; flex-shrink:0;
+    font-family:var(--display); font-weight:700; color:var(--azul-osc); font-size:16px; flex-shrink:0;
   }
   .test-person strong{display:block; font-size:14px;}
   .test-person span{font-size:13px; color:#c2c9f0;}
 
   .contact{text-align:center;}
   .contact h2{font-family:var(--display); font-weight:700; text-transform:uppercase; font-size:clamp(32px,5.8vw,64px); line-height:1.05; margin-bottom:24px;}
-  .contact h2 span{color:var(--naranja);}
+  .contact h2 span{color:var(--azul);}
   .contact p.lead{font-size:18px; max-width:520px; margin:0 auto 40px; color:#46443e;}
 
   .contact-form{max-width:560px; margin:0 auto; display:grid; gap:16px; text-align:left;}
@@ -333,7 +340,7 @@
     display:flex; align-items:center; justify-content:center;
     font-size:13px; font-weight:800; transition:background .2s ease, border-color .2s ease;
   }
-  .footer-social a:hover{background:var(--naranja); color:var(--blanco); border-color:var(--naranja);}
+  .footer-social a:hover{background:var(--naranja); color:var(--azul-osc); border-color:var(--naranja);}
   .footer-bottom{display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; padding-top:24px; font-size:13px; color:var(--azul-osc);}
 
   .float-wa{
@@ -365,7 +372,7 @@
     /* Hero centrado y sin desbordes */
     .hero{padding:48px 0 40px;}
     .hero-grid{gap:32px; text-align:center;}
-    .hero h1{min-height:auto; font-size:clamp(34px,9vw,48px); line-height:1.12;}
+    .hero h1{min-height:5.4em; font-size:clamp(34px,9vw,48px); line-height:1.12;}
     .hero p.lead{margin-left:auto; margin-right:auto;}
     .eyebrow{margin-left:auto; margin-right:auto;}
     .hero-ctas{justify-content:center;}
